@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #E8350F;
+  --color-primary-hover: #c42c0c;
+  --color-secondary: #FF7A1A;
+  --color-secondary-light: #FFF4EC;
+  --color-background: #FFFAF5;
+  --color-surface: #FFFFFF;
+  --color-text: #1A1A1A;
+  --color-text-muted: #6B6B6B;
+  --color-green: #16A34A;
+  --color-red: #DC2626;
+  --color-whatsapp: #25D366;
+  --color-whatsapp-hover: #1da851;
+
+  --font-size-price: 2rem;
+  --font-size-price-lg: 2.5rem;
+
+  --radius-card: 1rem;
+  --shadow-card: 0 2px 12px 0 rgba(0,0,0,0.08);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: system-ui, -apple-system, sans-serif;
+}
