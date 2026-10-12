@@ -5,12 +5,13 @@ interface OfertaCardProps {
   oferta: Oferta
 }
 
-function formatPrecio(precio: number): string {
+function formatPrecio(precio: string | number): string {
+  if (typeof precio === 'string') return precio
   return `$${precio.toLocaleString('es-CL')}`
 }
 
 export default function OfertaCard({ oferta }: OfertaCardProps) {
-  const { nombre, descripcion, cantidad, precio, imagen, emoji } = oferta
+  const { nombre, descripcion, precio, imagen, emoji } = oferta
 
   return (
     <article className="bg-white rounded-2xl shadow-md overflow-hidden flex flex-col transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg">
@@ -29,11 +30,6 @@ export default function OfertaCard({ oferta }: OfertaCardProps) {
         )}
         <div className="mt-auto pt-2 flex items-baseline gap-1.5">
           <span className="text-2xl font-extrabold text-[#E8350F]">{formatPrecio(precio)}</span>
-          {cantidad > 1 && (
-            <span className="text-xs font-semibold text-gray-500 bg-orange-50 px-1.5 py-0.5 rounded-full">
-              x{cantidad} unid.
-            </span>
-          )}
         </div>
       </div>
     </article>

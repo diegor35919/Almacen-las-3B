@@ -5,12 +5,13 @@ interface OfertaEstrellaProps {
   oferta: Oferta
 }
 
-function formatPrecio(precio: number): string {
+function formatPrecio(precio: string | number): string {
+  if (typeof precio === 'string') return precio
   return `$${precio.toLocaleString('es-CL')}`
 }
 
 export default function OfertaEstrella({ oferta }: OfertaEstrellaProps) {
-  const { nombre, descripcion, cantidad, precio, imagen, emoji } = oferta
+  const { nombre, descripcion, precio, imagen, emoji } = oferta
 
   return (
     <article className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl relative">
@@ -39,11 +40,6 @@ export default function OfertaEstrella({ oferta }: OfertaEstrellaProps) {
           <span className="text-4xl sm:text-5xl font-black text-[#E8350F] leading-none">
             {formatPrecio(precio)}
           </span>
-          {cantidad > 1 && (
-            <span className="text-sm font-bold text-white bg-[#FF7A1A] px-2.5 py-1 rounded-full self-center">
-              {cantidad} unidades
-            </span>
-          )}
         </div>
       </div>
     </article>

@@ -1,6 +1,5 @@
 import Hero from './components/Hero'
 import OfertaEstrella from './components/OfertaEstrella'
-import OfertaCard from './components/OfertaCard'
 import WhatsAppButton from './components/WhatsAppButton'
 import Footer from './components/Footer'
 import { ofertasEstrella } from './data/ofertas'
